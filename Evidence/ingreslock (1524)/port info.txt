@@ -1,0 +1,20 @@
+Port 1524 — ingreslock / legacy service / lab backdoor
+-------------------------------------------------------
+Description:
+- IANA assignment: ingreslock (historical). In many test labs (e.g., Metasploitable) port 1524 is used to host intentionally vulnerable/backdoor services.
+- Actual risk depends entirely on the service/version running on this port. In real environments it may be unused or service-specific.
+
+Risk Assessment
+- Likelihood: 2–3 (2 if unknown/rare service; 3 if a known backdoor or PoC exists)
+- Impact: 2–3 (could range from info disclosure to remote shell/root on vulnerable implementations)
+- Risk Score: 4–9 — Severity: Medium to High (evaluate case-by-case)
+
+Recommendation:
+- Identify the exact service and version (nmap -sV -p1524) before assessment.
+- If service is unnecessary, close the port; otherwise patch/replace the service.
+- On lab targets: document PoC carefully and revert to snapshot after testing.
+
+General notes for documentation:
+- For each port include: nmap output file, any vuln scan/nessus output, exploit reference (searchsploit / Metasploit module), and a screenshot (proof).  
+- Use the Likelihood × Impact method to fill the Findings table in the report.  
+- Never publish sensitive data (password hashes, full /etc/shadow) in a public repo — include only redacted evidence or private ZIP for the instructor.

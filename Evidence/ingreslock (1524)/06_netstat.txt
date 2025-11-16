@@ -1,0 +1,57 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:512             0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 0.0.0.0:513             0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 0.0.0.0:2049            0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:514             0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 0.0.0.0:42883           0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN      5164/jsvc       
+tcp        0      0 0.0.0.0:6697            0.0.0.0:*               LISTEN      5209/unrealircd 
+tcp        0      0 0.0.0.0:3306            0.0.0.0:*               LISTEN      4780/mysqld     
+tcp        0      0 0.0.0.0:1099            0.0.0.0:*               LISTEN      5205/rmiregistry
+tcp        0      0 0.0.0.0:6667            0.0.0.0:*               LISTEN      5209/unrealircd 
+tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      5036/smbd       
+tcp        0      0 0.0.0.0:55915           0.0.0.0:*               LISTEN      4958/rpc.mountd 
+tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      5229/Xtightvnc  
+tcp        0      0 0.0.0.0:58863           0.0.0.0:*               LISTEN      4228/rpc.statd  
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      4183/portmap    
+tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN      5229/Xtightvnc  
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      5184/apache2    
+tcp        0      0 0.0.0.0:8787            0.0.0.0:*               LISTEN      5211/ruby       
+tcp        0      0 0.0.0.0:8180            0.0.0.0:*               LISTEN      5164/jsvc       
+tcp        0      0 0.0.0.0:1524            0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 0.0.0.0:37653           0.0.0.0:*               LISTEN      5205/rmiregistry
+tcp        0      0 0.0.0.0:21              0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 192.168.6.136:53        0.0.0.0:*               LISTEN      4633/named      
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      4633/named      
+tcp        0      0 0.0.0.0:23              0.0.0.0:*               LISTEN      5058/xinetd     
+tcp        0      0 0.0.0.0:6200            0.0.0.0:*               LISTEN      5660/sh         
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      4863/postgres   
+tcp        0      0 0.0.0.0:25              0.0.0.0:*               LISTEN      5026/master     
+tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      4633/named      
+tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      5036/smbd       
+tcp6       0      0 :::2121                 :::*                    LISTEN      5102/proftpd: (acce
+tcp6       0      0 :::3632                 :::*                    LISTEN      4890/distccd    
+tcp6       0      0 :::53                   :::*                    LISTEN      4633/named      
+tcp6       0      0 :::22                   :::*                    LISTEN      4657/sshd       
+tcp6       0      0 :::5432                 :::*                    LISTEN      4863/postgres   
+tcp6       0      0 ::1:953                 :::*                    LISTEN      4633/named      
+udp        0      0 0.0.0.0:2049            0.0.0.0:*                           -               
+udp        0      0 192.168.6.136:137       0.0.0.0:*                           5034/nmbd       
+udp        0      0 0.0.0.0:137             0.0.0.0:*                           5034/nmbd       
+udp        0      0 192.168.6.136:138       0.0.0.0:*                           5034/nmbd       
+udp        0      0 0.0.0.0:138             0.0.0.0:*                           5034/nmbd       
+udp        0      0 127.0.0.1:161           0.0.0.0:*                           5042/snmpd      
+udp        0      0 0.0.0.0:39600           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:35763           0.0.0.0:*                           4633/named      
+udp        0      0 192.168.6.136:53        0.0.0.0:*                           4633/named      
+udp        0      0 127.0.0.1:53            0.0.0.0:*                           4633/named      
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           4212/dhclient3  
+udp        0      0 0.0.0.0:69              0.0.0.0:*                           5058/xinetd     
+udp        0      0 0.0.0.0:41297           0.0.0.0:*                           4958/rpc.mountd 
+udp        0      0 0.0.0.0:49257           0.0.0.0:*                           4228/rpc.statd  
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           4183/portmap    
+udp        0      0 0.0.0.0:1012            0.0.0.0:*                           4228/rpc.statd  
+udp6       0      0 :::53                   :::*                                4633/named      
+udp6       0      0 :::59000                :::*                                4633/named      
+nano

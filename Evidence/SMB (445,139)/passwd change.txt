@@ -1,0 +1,4 @@
+passwd
+Enter new UNIX password: 12345
+Retype new UNIX password: 12345
+passwd: password updated successfully

@@ -1,0 +1,20 @@
+# Nmap 7.95 scan initiated Thu Nov 13 21:52:51 2025 as: /usr/lib/nmap/nmap -sV -p 1099 -O -A -oN pentest_project/evidence/JAVA/nmap.txt 192.168.6.136
+Nmap scan report for 192.168.6.136
+Host is up (0.0010s latency).
+
+PORT     STATE SERVICE  VERSION
+1099/tcp open  java-rmi GNU Classpath grmiregistry
+MAC Address: 00:0C:29:49:93:C2 (VMware)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   1.04 ms 192.168.6.136
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Nov 13 21:52:59 2025 -- 1 IP address (1 host up) scanned in 7.86 seconds

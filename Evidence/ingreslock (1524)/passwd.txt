@@ -1,0 +1,5 @@
+root@metasploitable:/# passwd
+Enter new UNIX password: 9090
+Retype new UNIX password: 9090 
+passwd: password updated successfully
+

@@ -1,0 +1,36 @@
+Port 1099 is the default port used by the Java RMI Registry (Remote Method Invocation) service.
+Java RMI allows a Java application running on one machine to invoke methods on an object located on another machine, as if it were local. This makes it useful for distributed systems, remote administration, and client-server applications.
+
+Key Points
+
+Service: Java RMI Registry
+
+Default Port: 1099 (TCP)
+
+Purpose: Stores and manages remote object references so clients can locate and communicate with them.
+
+Common Use: Remote Java applications, middleware, and enterprise solutions.
+
+Security Risks
+
+Port 1099 can be high-risk if left exposed:
+
+Remote code execution vulnerabilities (e.g., unsafe deserialization)
+
+Unauthorized access to RMI objects
+
+Attackers can register malicious objects
+
+Often targeted during penetration tests (e.g., exploits in Metasploit)
+
+How to Protect It
+
+Restrict access using firewall rules
+
+Enable RMI security policies
+
+Use SSL/TLS for encrypted communication
+
+Disable the registry if not needed
+
+Avoid exposing it to the internet

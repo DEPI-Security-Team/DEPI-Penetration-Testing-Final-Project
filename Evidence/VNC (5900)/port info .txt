@@ -1,0 +1,20 @@
+Description:
+- Port 5900/tcp is typically used by VNC (Virtual Network Computing) servers (display :0). VNC provides remote graphical access to a machine's desktop.
+- VNC implementations vary (RealVNC, TightVNC, TigerVNC, etc.). Many default configurations use weak authentication, limited password length, or no built-in encryption.
+- In lab environments a VNC service can allow full interactive control of the target machine if credentials are weak or a vulnerable version exists.
+
+Risk Assessment (Likelihood × Impact)
+- Likelihood: 2–3
+  - 3 = VNC is exposed publicly and either uses weak/default auth or a known vulnerable version / public PoC exists.
+  - 2 = VNC is reachable only on internal network or requires additional conditions; brute-force is possible but mitigated.
+  - 1 = VNC access is protected by VPN/SSH tunnel or strong certificate-based auth.
+- Impact: 3
+  - Full desktop access can allow an attacker to execute commands, access files, escalate privileges, and move laterally.
+- Risk Score: 6–9 — Severity: High (in most real cases where VNC is exposed without strong protections)
+
+Recommendation:
+- Do not expose VNC directly to untrusted networks or the Internet. Require access via VPN or SSH tunnel.
+- Use VNC variants that support TLS/encryption or employ an encrypted tunnel (SSH). Prefer certificate or PAM-based authentication over simple password.
+- Enforce strong, complex passwords and limit login attempts. Consider IP-based access controls / firewall rules.
+- Keep VNC server software patched and remove unused VNC servers.
+- Monitor logs and network traffic for unexpected VNC connections (outbound or inbound).

@@ -1,0 +1,38 @@
+# Nmap 7.95 scan initiated Thu Nov 13 15:24:23 2025 as: /usr/lib/nmap/nmap -sV -p 139,445 -O -A -oN pentest_project/evidence/SMB/nmap-smb 192.168.6.136
+Nmap scan report for 192.168.6.136
+Host is up (0.0019s latency).
+
+PORT    STATE SERVICE     VERSION
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+MAC Address: 00:0C:29:49:93:C2 (VMware)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+
+Host script results:
+|_clock-skew: mean: 2h30m00s, deviation: 3h32m07s, median: 0s
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: metasploitable
+|   NetBIOS computer name: 
+|   Domain name: localdomain
+|   FQDN: metasploitable.localdomain
+|_  System time: 2025-11-13T08:24:37-05:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_nbstat: NetBIOS name: METASPLOITABLE, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   1.89 ms 192.168.6.136
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Nov 13 15:24:36 2025 -- 1 IP address (1 host up) scanned in 12.88 seconds

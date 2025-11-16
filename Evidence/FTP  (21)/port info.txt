@@ -1,0 +1,15 @@
+Port 21 — FTP (vsftpd, etc.)
+--------------------------------
+Description:
+- FTP (File Transfer Protocol) commonly runs on TCP port 21. Services like vsftpd may expose banners revealing versions.
+- Some obsolete FTP servers (or misconfigured/old versions) include known backdoors or RCE PoCs.
+
+Risk Assessment (example scale: Likelihood 1-3, Impact 1-3)
+- Likelihood: 3 (public PoC / Metasploit modules exist for some versions)
+- Impact: 3 (possible remote shell / root on vulnerable systems)
+- Risk Score: 9 — Severity: High
+
+Recommendation:
+- Disable FTP if not needed; use SFTP/FTPS.
+- Patch/update vsftpd or other FTP services.
+- Restrict access with firewall rules and monitor logs.
