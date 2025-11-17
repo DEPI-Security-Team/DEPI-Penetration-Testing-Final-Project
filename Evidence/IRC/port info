@@ -1,0 +1,22 @@
+Port 6667 — IRC (Internet Relay Chat)
+-------------------------------------
+
+Description:
+- Port 6667/tcp is commonly used for IRC (Internet Relay Chat) servers and clients.
+- IRC is a text-based chat protocol; servers host channels and clients connect to channels for real-time messaging.
+- Attackers sometimes use IRC servers or clients as C2 (command and control) channels for botnets, or exploit vulnerable IRC daemons.
+
+Risk Assessment (Likelihood × Impact)
+- Likelihood: 1–3
+  - 3 = Publicly exposed IRC service known to be part of C2 or running a vulnerable daemon with public PoC.
+  - 2 = IRC reachable internally or requires specific conditions; some risk of misuse or information disclosure.
+  - 1 = IRC not exposed to untrusted networks or protected by strong controls.
+- Impact: 2
+  - IRC itself typically exposes text/metadata (nicknames, channels), but if used as C2 or combined with vulnerable services it can enable remote control or data exfiltration.
+- Risk Score: 2–6 — Severity: critical  
+
+Recommendation:
+- Do not expose IRC servers to the Internet unless necessary. If required, restrict access by ACLs and VPN.
+- Monitor outgoing and incoming connections to IRC ports for unusual activity.
+- Patch and harden IRC daemons; disable unnecessary bots or services.
+- Treat detection of IRC C2 traffic as a high-priority incident for investigation.
