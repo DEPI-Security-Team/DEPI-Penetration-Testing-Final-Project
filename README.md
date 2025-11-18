@@ -5,7 +5,7 @@ Complete penetration testing assessment against Metasploitable 2 target.
 
 ## 🗂️ Project Structure
 - `/evidence` - Exploitation evidence and screenshots
-- `/nessus-screens` - Vulnerability scan results  
+- `/Nessus-results` - Vulnerability scan results  
 - `/report` - Professional penetration test report
 
 ## 🛠️ Tools Used
@@ -15,4 +15,5 @@ Complete penetration testing assessment against Metasploitable 2 target.
 - Metasploit Framework
 
 ## 📝 Note
+
 This repository contains educational penetration testing materials.
