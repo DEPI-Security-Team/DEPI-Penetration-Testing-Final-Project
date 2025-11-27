@@ -1,7 +1,7 @@
 # Project Proposal
 **Project Title:** Network Penetration Testing  
 **Prepared by:** Abdelrahman Waleed - Zeyad Reda  - Mostafa sherif
-**Date:** [11/11/2025]
+**Date:** [1/11/2025]
 
 ## 1. Overview
 This project aims to conduct a full penetration test on a vulnerable virtual machine (Metasploitable 2) inside an isolated lab environment. The assessment includes scanning, enumeration, vulnerability analysis, exploitation, and documenting all findings with actionable mitigation recommendations. Tools such as Nmap and Metasploit were used during the testing process.
@@ -21,3 +21,4 @@ This project aims to conduct a full penetration test on a vulnerable virtual mac
 - Denial-of-Service attacks.  
 - Attacks on real external networks.  
 - Social engineering activities.  
+
