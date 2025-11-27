@@ -11,7 +11,7 @@
 4. Post-exploitation & evidence collection
 5. Report writing & presentation
 
-## Example Gantt Table
+## Gantt Table
 | Task                          | Start Date | End Date   | Duration (days) |
 |-------------------------------|------------|------------|-----------------|
 | Environment setup             | 2025-11-01 | 2025-11-03 | 3               |
@@ -19,5 +19,6 @@
 | Exploitation                  | 2025-11-09 | 2025-11-14 | 6               |
 | Post-exploitation evidence    | 2025-11-15 | 2025-11-17 | 3               |
 | Report & presentation         | 2025-11-18 | 2025-11-20 | 3               |
+
 
 
